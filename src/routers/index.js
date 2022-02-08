@@ -1,22 +1,21 @@
-const newsRouter=require('./news');
+const newsRouter = require('./news');
 
-function route(app){
+function route(app) {
+    app.use('/news', newsRouter);
 
-  app.use('/news',newsRouter);
-  
     app.get('/', (req, res) => {
         res.render('home');
-      });
-      
-      app.get('/search', (req, res) => {
+    });
+
+    app.get('/search', (req, res) => {
         console.log(req.body);
         res.render('search');
-      });
-      
-      app.post('/search', (req, res) => {
+    });
+
+    app.post('/search', (req, res) => {
         console.log(req.body);
         res.send('');
-      });
+    });
 }
 
-module.exports=route;
+module.exports = route;

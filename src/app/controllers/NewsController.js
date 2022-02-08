@@ -1,12 +1,11 @@
-class NewController{
-    
+class NewController {
     //[GET] news
-    index(req,res){
+    index(req, res) {
         res.render('news');
     }
-    amen(req,res){
+    amen(req, res) {
         res.render('home');
     }
 }
 
-module.exports = new NewController;
+module.exports = new NewController();

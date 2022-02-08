@@ -5,11 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "watch": "node-sass src/resources/scss/ src/public/css/",
+    "watch": "node-sass --watch src\\resources\\scss\\ -o src\\public\\css\\",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Phan Le Min",
   "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --write --tab-width 4"
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^6.0.1"
